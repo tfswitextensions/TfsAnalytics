@@ -1,0 +1,70 @@
+@model IEnumerable<TfsAnalytics.Models.TestResult>
+
+@{
+    ViewBag.Title = "Results";
+}
+
+<table>
+    <tr>
+        <th>Outcome</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Run by</th>
+        <th>Run date</th>
+        <th>Duration</th>
+        <th>Machine</th>
+        @*<th>Run type</th>*@
+        @*<th>Run state</th>*@
+        @*<th>Environment</th>
+        <th>Controller</th>
+        <th>Test settings</th>
+        <th>Configuration</th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @*<img src="~/img/Status_Ok_16x16.png" alt="" />*@
+                <img src="@Url.Content(item.OutcomeIcon)" alt="" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Machine)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RunType)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RunState)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Environment)*
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Controller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestSettings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestConfiguration)
+            </td>*@
+        </tr>
+    }
+
+</table>
